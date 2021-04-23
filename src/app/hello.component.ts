@@ -24,7 +24,7 @@ export class HelloComponent implements OnInit {
 
   private ajaxRequest: AjaxRequest = {
     url:
-      'https://dev.api.agvancesky.com/customerblendtickets/zzzzzz?customerGuid=A23F837A-101A-42B8-A6DC-A08517E4C1A3',
+      'https://dev.api.agvancesky.com/customerblendtickets/zzzzzz?customerGuid=A23F837A-101A-42B8-A6DC-A08517E4C1A3&pageSize=20&pageNumber=1',
     method: 'GET',
     headers: {
       authorization:
@@ -38,7 +38,7 @@ export class HelloComponent implements OnInit {
     const users = ajax(this.ajaxRequest);
 
     const subscribe = users.subscribe(
-      res => console.log(res),
+      res => console.log(res.response.data),
       err => console.error(err)
     );
   }
